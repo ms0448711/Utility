@@ -11,3 +11,6 @@ Breif Manual:
 3. (Optional) Download Kibana to visualize the data.
 4. Import data.
 5. Query data.
+
+**extra info
+https://soarlin.github.io/2016/11/13/elasticsearch-note-operation/
