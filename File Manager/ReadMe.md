@@ -9,5 +9,5 @@ GG OST - cfe.mp3<br/>
 
 bash names_rep_with_indexes "GG OST - "
 
-\01. abc.mp3<br/>
-\02. cfe.mp3<br/>
+ 01. abc.mp3<br/>
+ 02. cfe.mp3<br/>
