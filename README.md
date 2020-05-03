@@ -11,6 +11,8 @@ Breif Manual:
 3. (Optional) Download Kibana to visualize the data. https://www.elastic.co/downloads/kibana
 4. Import data.
 First of all, you will need to create a JSON file that contains the data you want to import. The format will look like this: 
+
+
 { "index" : { "_index" : "test", "_id" : "1" } }
 { "field1" : "value1" }
 { "index" : { "_index" : "test", "_id" : "2" } }
