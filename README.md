@@ -21,11 +21,11 @@ First of all, you will need to create a JSON file that contains the data you wan
 The first line is request body, which tells Elasticsearch what to do with the following data. To be more specific, it may tell Elaticsearch where you want to put your data (the "_index" field) etc.
 The second line is your data.
 
-Then, you will use 
-curl -H "Content-Type: application/json" -XPOST "localhost:9200/bank/_bulk?pretty" --data-binary "@fileName.json"; echo
-or
-curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/_bulk --data-binary "@fileName.json"; echo
-idk their differences for now.
+Then, you will use   
+curl -H "Content-Type: application/json" -XPOST "localhost:9200/bank/_bulk?pretty" --data-binary "@fileName.json"; echo  
+or  
+curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/_bulk --data-binary "@fileName.json"; echo  
+idk their differences for now.  
 
 ***Detail: https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html
 ***Data_format: https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html
