@@ -12,11 +12,10 @@ Breif Manual:
 4. Import data.
 First of all, you will need to create a JSON file that contains the data you want to import. The format will look like this: 
 
-
-{ "index" : { "_index" : "test", "_id" : "1" } }
-{ "field1" : "value1" }
-{ "index" : { "_index" : "test", "_id" : "2" } }
-{ "field1" : "value2" }
+{ "index" : { "_index" : "test", "_id" : "1" } }<br/>
+{ "field1" : "value1" }<br/>
+{ "index" : { "_index" : "test", "_id" : "2" } }<br/>
+{ "field1" : "value2" }<br/>
 ...
 
 The first line is request body, which tells Elasticsearch what to do with the following data. To be more specific, it may tell Elaticsearch where you want to put your data (the "_index" field) etc.
