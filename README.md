@@ -21,22 +21,22 @@ First of all, you will need to create a JSON file that contains the data you wan
 In python code: <br/>
 <code>
  
-def read_data(): 
-    for data in data_set: 
-        d=dict() 
-        #transform your data into dictionary, which is "d"  
-        d=json.dumps(d) 
-        d=json.loads(d) 
-        yield d 
- 
+def read_data():  
+    for data in data_set:  
+        d=dict()  
+        #transform your data into dictionary, which is "d"   
+        d=json.dumps(d)  
+        d=json.loads(d)  
+        yield d   
+    
 
-with open("test_all_data.json",'w') as file_output: 
-    for d in read_data(): 
-        api={ "index" : { "_index" : "recipes", "_id" : d['id'] } } 
-        json.dump(api,file_output) 
-        file_output.write("\n") 
-        json.dump(d,file_output) 
-        file_output.write("\n") 
+with open("test_all_data.json",'w') as file_output:  
+    for d in read_data():  
+        api={ "index" : { "_index" : "recipes", "_id" : d['id'] } }  
+        json.dump(api,file_output)  
+        file_output.write("\n")  
+        json.dump(d,file_output)  
+        file_output.write("\n")  
         
 
 </code> 
@@ -45,25 +45,25 @@ The first line is request body, which tells Elasticsearch what to do with the fo
 The second line is your data.
 
 Then, you will use   
-curl -H "Content-Type: application/json" -XPOST "localhost:9200/bank/_bulk?pretty" --data-binary "@fileName.json"; echo  
+curl -H "Content-Type: application/json" -XPOST "localhost:9200/bank/_bulk?pretty" --data-binary "@fileName.json"; echo   
 or  
-curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/_bulk --data-binary "@fileName.json"; echo  
-idk their differences for now.  
+curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/_bulk --data-binary "@fileName.json"; echo   
+idk their differences for now.   
 
 ***Detail: https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html
 ***Data_format: https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html
 
-5. Query data.
-If you have download Kibana, you can open the Dev Tool and enter command.
-If you didn't download it, you can use cURL in your CLI, or use some other programming language, like python3.
-In python3:
-from elasticsearch import Elasticsearch
-es=Elasticsearch()
-res=es.search(index="your_data_index",body={
-    "query": { "match": { "field1": "keyword_of_the_value" } }
-})
+5. Query data.  
+If you have download Kibana, you can open the Dev Tool and enter command.  
+If you didn't download it, you can use cURL in your CLI, or use some other programming language, like python3.  
+In python3:  
+from elasticsearch import Elasticsearch  
+es=Elasticsearch()    
+res=es.search(index="your_data_index",body={  
+    "query": { "match": { "field1": "keyword_of_the_value" } }  
+})  
 
-There are more commands can be used and more matching method can be utilized.
+There are more commands can be used and more matching method can be utilized.  
 ### Conclusion
 **extra info
 Chinese: https://soarlin.github.io/2016/11/13/elasticsearch-note-operation/
