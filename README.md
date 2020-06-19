@@ -57,12 +57,13 @@ idk their differences for now.
 If you have download Kibana, you can open the Dev Tool and enter command.  
 If you didn't download it, you can use cURL in your CLI, or use some other programming language, like python3.  
 In python3:  
+```
 from elasticsearch import Elasticsearch  
 es=Elasticsearch()    
 res=es.search(index="your_data_index",body={  
     "query": { "match": { "field1": "keyword_of_the_value" } }  
 })  
-
+```
 There are more commands can be used and more matching method can be utilized.  
 ### Conclusion
 **extra info
