@@ -21,8 +21,8 @@ First of all, you will need to create a JSON file that contains the data you wan
 In python code: <br/>
 <code>
  
-def read_data():  
-    for data in data_set:  
+def read_data():  <br/>
+    for data in data_set:  <br/>
         d=dict()  
         #transform your data into dictionary, which is "d"   
         d=json.dumps(d)  
