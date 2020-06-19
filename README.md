@@ -18,6 +18,28 @@ First of all, you will need to create a JSON file that contains the data you wan
 { "field1" : "value2" }<br/>
 ...
 
+In python code:
+''
+def read_data():
+    for data in data_set:
+        d=dict()
+        #transform your data into dictionary, which is "d"
+        d=json.dumps(d)
+        d=json.loads(d)
+        yield d
+
+
+with open("test_all_data.json",'w') as file_output:
+    for d in read_data():
+        api={ "index" : { "_index" : "recipes", "_id" : d['id'] } }
+        json.dump(api,file_output)
+        file_output.write("\n")
+        json.dump(d,file_output)
+        file_output.write("\n")
+        
+
+''
+
 The first line is request body, which tells Elasticsearch what to do with the following data. To be more specific, it may tell Elaticsearch where you want to put your data (the "_index" field) etc.
 The second line is your data.
 
